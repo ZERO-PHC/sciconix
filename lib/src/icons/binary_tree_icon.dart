@@ -1,40 +1,13 @@
-import 'package:flutter/material.dart';
+// In src/icons/binary_tree_icon.dart
+import 'package:sciconix/src/painters/binary_tree_painter.dart';
 
-class BinaryTreeIconPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final Paint nodePaint = Paint()
-      ..color = Colors.blue
-      ..style = PaintingStyle.fill;
-    final Paint linePaint = Paint()
-      ..color = Colors.black
-      ..strokeWidth = size.width * 0.02
-      ..style = PaintingStyle.stroke;
+import '../models/sciconix_model.dart';
 
-    // Draw lines
-    canvas.drawLine(Offset(size.width * 0.5, size.height * 0.2),
-                    Offset(size.width * 0.3, size.height * 0.5), linePaint);
-    canvas.drawLine(Offset(size.width * 0.5, size.height * 0.2),
-                    Offset(size.width * 0.7, size.height * 0.5), linePaint);
-    canvas.drawLine(Offset(size.width * 0.3, size.height * 0.5),
-                    Offset(size.width * 0.2, size.height * 0.8), linePaint);
-    canvas.drawLine(Offset(size.width * 0.3, size.height * 0.5),
-                    Offset(size.width * 0.4, size.height * 0.8), linePaint);
-    canvas.drawLine(Offset(size.width * 0.7, size.height * 0.5),
-                    Offset(size.width * 0.6, size.height * 0.8), linePaint);
-    canvas.drawLine(Offset(size.width * 0.7, size.height * 0.5),
-                    Offset(size.width * 0.8, size.height * 0.8), linePaint);
-
-    // Draw nodes
-    canvas.drawCircle(Offset(size.width * 0.5, size.height * 0.2), size.width * 0.08, nodePaint);
-    canvas.drawCircle(Offset(size.width * 0.3, size.height * 0.5), size.width * 0.08, nodePaint);
-    canvas.drawCircle(Offset(size.width * 0.7, size.height * 0.5), size.width * 0.08, nodePaint);
-    canvas.drawCircle(Offset(size.width * 0.2, size.height * 0.8), size.width * 0.08, nodePaint);
-    canvas.drawCircle(Offset(size.width * 0.4, size.height * 0.8), size.width * 0.08, nodePaint);
-    canvas.drawCircle(Offset(size.width * 0.6, size.height * 0.8), size.width * 0.08, nodePaint);
-    canvas.drawCircle(Offset(size.width * 0.8, size.height * 0.8), size.width * 0.08, nodePaint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
+final binaryTreeIcon = SciconixModel(
+  id: 'binary_tree',
+  code: 'BT',
+  painter: BinaryTreeIconPainter(),
+  description: 'Depicts a binary tree data structure',
+  category: 'Data Structures',
+  tags: ['binary tree', 'data structure', 'tree'],
+);
